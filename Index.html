@@ -1,0 +1,91 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+	<script type="text/javascript" src="js/model.js"></script>
+	<script type="text/javascript" src="js/view.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="page-header">
+	  <h1>StopWatch App <small>-Manoj Shevate</small></h1>
+	</div>
+<div class="container">
+<div id="one" class="jStopWatch container-fluid">
+	<div class="well well-sm">Stopwatch 1</div>
+	<button class="jStart btn btn-default"> Start </button>
+	<button class="jStop btn btn-default" disabled> Stop </button>
+	<button class="jReset btn btn-default"> Reset </button>
+
+	<div>
+	<span class="jTimerDisplay"> </span>
+	<button class="jSplit btn btn-default" disabled> Split </button>
+	</div>
+	<div class="jHistory">
+	</div>
+</div>
+<hr/>
+<div id="two" class="jStopWatch container-fluid">
+	<div class="well well-sm">Stopwatch 2</div>
+	<button class="jStart btn btn-default"> Start </button>
+	<button class="jStop btn btn-default" disabled> Stop </button>
+	<button class="jReset btn btn-default"> Reset </button>
+
+	<div>
+	<span class="jTimerDisplay"> </span>
+	<button class="jSplit btn btn-default" disabled> Split </button>
+	</div>
+	<div class="jHistory">
+	</div>
+</div>
+
+<hr/>
+<div id="three" class="jStopWatch container-fluid">
+	<div class="well well-sm">Stopwatch 3</div>
+	<button class="jStart btn btn-default"> Start </button>
+	<button class="jStop btn btn-default" disabled> Stop </button>
+	<button class="jReset btn btn-default"> Reset </button>
+
+	<div>
+	<span class="jTimerDisplay"> </span>
+	<button class="jSplit btn btn-default" disabled> Split </button>
+	</div>
+	<div class="jHistory">
+	</div>
+</div>
+
+</div>
+
+
+<script type="text/x-handlebars-template" id="historyTemplate">
+	<div class="container-fluid">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+				<th>Total Time</th>
+				<th>Lap Time</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			{{#each history}}
+				<tr>
+					<td> {{totalTime}} </td>
+					<td> {{lapTime}} </td>
+				</tr>
+			{{else}}
+			<tr>
+    			<td colspan="2">Empty List!! Click on Start button to Start Stopwatch</td>
+  			</tr>
+			{{/each}}
+			</tbody>			
+		</table>
+	</div>
+</script>
+</body>
+</html>
